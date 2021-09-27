@@ -89,6 +89,9 @@ int mkdir(char *pathname)
     printf("ready to mkdir %s\n", pathname);
     q = (NODE *)malloc(sizeof(NODE));
     q->type = 'D';
+    q->child = NULL;
+    q->parent = NULL;
+    q->sibling = NULL;
     strcpy(q->name, pathname);
     insert_child(start, q);
     printf("mkdir %s OK\n", pathname);
@@ -110,6 +113,7 @@ int ls(char *pathname)
         else{
           printf("[%c %s] ",p->type,p->name);
         }
+        p = p -> sibling;
       }
     }
   }
