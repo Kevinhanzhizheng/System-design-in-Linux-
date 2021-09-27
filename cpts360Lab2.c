@@ -116,6 +116,8 @@ int ls(char *pathname)
         p = p -> sibling;
       }
     }
+  else{ 
+        printf("[%c %s] ",cwd->type, cwd->name);}
   }
     
     printf("\n");
